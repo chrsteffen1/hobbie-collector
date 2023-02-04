@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/hobbies/hobbies-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="hobby-container">
+  <div class="hobby-img">
+    <img 
+      src="{% static 'images/sk8r-boi-hobby.svg' %}" 
+      alt="A skater boy hobby"
+    >
+  </div>
+  <div class="hobby-details">
+    <h1>{{ hobby.name }}</h1>
+    {% if hobby.price == 0 %}
+      <h2>A free hobby at.</h2>
+    {% elif hobby.price > 0 and hobby.price <= 3 %}
+      <h2>A cheap hobby.</h2>
+    {% elif hobby.price > 3 and hobby.price <= 6%}
+      <h2>A slightly expensive hobby.</h2>
+    {% elif hobby.price > 6%}
+      <h2>An expensive hobby.</h2>
+    {% endif %}
+    <p>{{ hobby.description }}</p>
+  </div>
+</section>
+
+{% endblock %}

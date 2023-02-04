@@ -17,25 +17,27 @@
 <section class="card-container">
   {% for hobby in hobbies %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="" 
-            alt=""
-          >
+      <a href="/hobbies/{{ hobby.id}}">        
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
+              src="" 
+              alt=""
+            >
+          </div>
+          <h2 class="card-title">{{ hobby.name }}</h2>
+          {% if hobby.price > 0 and hobby.price < 3 %}
+            <p>A cheaper hobby. I am currently a/an {{ hobby.level }}</p>
+          {% elif hobby.price > 3 and hobby.price < 6 %}
+            <p>A slightly expensive hobby. I am currently a/an {{ hobby.level }} </p>
+          {%elif hobby.price == 0%}
+            <p>A free hobby. I am currently a/an {{ hobby.level }}</p>
+          {% else %}
+            <p>An expensive hobby. I am currently a/an {{ hobby.level }}</p>
+          {% endif %}
+          <p><small>{{ hobby.description }}</small></p>
         </div>
-        <h2 class="card-title">{{ hobby.name }}</h2>
-        {% if hobby.price > 0 and hobby.price < 3 %}
-          <p>A cheaper hobby. I am currently a/an {{ hobby.level }}</p>
-        {% elif hobby.price > 3 and hobby.price < 6 %}
-          <p>A slightly expensive hobby. I am currently a/an {{ hobby.level }} </p>
-        {%elif hobby.price == 0%}
-          <p>A free hobby. I am currently a/an {{ hobby.level }}</p>
-        {% else %}
-          <p>An expensive hobby. I am currently a/an {{ hobby.level }}</p>
-        {% endif %}
-        <p><small>{{ hobby.description }}</small></p>
-      </div>
+      </a>
     </div>
   {% endfor %}
 </section>
