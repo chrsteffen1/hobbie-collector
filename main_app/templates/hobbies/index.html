@@ -17,7 +17,7 @@
 <section class="card-container">
   {% for hobby in hobbies %}
     <div class="card">
-      <a href="/hobbies/{{ hobby.id}}">        
+      <a href="{% url 'hobbies_detail' hobby_id%}">        
         <div class="card-content">
           <div class="card-img-container">
             <img 
