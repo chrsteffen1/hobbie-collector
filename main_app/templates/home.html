@@ -9,12 +9,17 @@
 
 <section class="logo-container">
   <div class="hobby-container">
-    <img src="{% static 'images/splash.svg' %}" alt="The Hobby Collector Hobby" />
-  </div>
-  <img 
-    src="{% static 'images/logotype.svg' %}" 
-    alt="Hobby Collector"
-  />
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100">
+    <rect x="10" y="10" width="580" height="800" fill="rgba(248, 104, 104, 0.7)"/>
+    <circle cx="50" cy="50" r="30" fill="#fff"/>
+    <path d="M 30 70 A 20 20 0 1 0 70 70" stroke="#fff" stroke-width="5" fill="none"/>
+    <path d="M 50 50 L 55 60 L 60 50 Z" fill="#fff"/>
+    <text x="90" y="50" font-size="20" text-anchor="start" fill="#fff">Hobby Collector</text>
+  </svg>
+  
+  
+  
 </section>
 
 {% endblock %}
